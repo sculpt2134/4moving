@@ -1,8 +1,7 @@
 import './App.css';
-import { Link, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import About from './pages/About';
-import NotFound from './pages/NotFound';
+import { Link } from 'react-router-dom';
+import AppRouter from './AppRouter';
+
 
 function App() {
   return (
@@ -21,17 +20,16 @@ function App() {
               <li className="nav-item">
                 <Link className="nav-link" to="/about">About</Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/contact">Contact</Link>
+              </li>
             </ul>
           </div>
         </div>
       </nav>
 
       <main className="container py-4">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <AppRouter />
       </main>
     </div>
   );
