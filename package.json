@@ -1,0 +1,27 @@
+{
+  "name": "react-node-app",
+  "version": "1.0.0",
+  "description": "React.js frontend with Node.js backend starter project",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server.js",
+    "client": "cd client && npm start",
+    "install-client": "cd client && npm install",
+    "build": "cd client && npm run build"
+  },
+  "keywords": ["react","node","express","fullstack"],
+  "author": "4moving",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.0"
+  }
+}

@@ -1,0 +1,24 @@
+name: Deploy to 4moving
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Deploy via SSH
+      uses: appleboy/ssh-action@v0.1.5
+      with:
+        host: 43.200.145.58
+        username: deploy
+        key: ${{ secrets.LIGHTSAIL_SSH_KEY }}
+        port: 22
+        script: |
+          /var/deployments/scripts/deploy-project.sh \
+            "4moving" \
+            "git@github.com:uxbiztech/4moving.git" \
+            "main" \
+            "3005"
